@@ -1,0 +1,16 @@
+<html>
+  <p> "Hi my name is Kris" </p>
+
+  <div class="pure-menu">
+    <ul class="pure-menu-list">
+      <% @users.each do |key_name, info_hash| %>
+        <li class="pure-menu-item">
+          <a href="/users/<%=key_name%>"class="pure-menu-link"><%= key_name %></a>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+
+
+
+</html>

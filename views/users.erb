@@ -1,0 +1,28 @@
+<html>
+  <h2> Email Address </h2>
+  <div class="pure-menu">
+    <ul class="pure-menu-list">
+        <li class="pure-menu-list"><%=  @users[@name.to_sym][:email] %></li>
+    </ul>
+
+  <h2> Interests </h2>
+  <div class="pure-menu">
+    <ul class="pure-menu-list">
+      <li><%= @users[@name.to_sym][:interests].join(", ") %></li>
+    </ul>
+  </div>
+
+  <h2> Other Users </h2>
+    <ul class="pure-menu-list">
+      <% @users.each do |key_name, info_hash| %>
+        <% if key_name != @name.to_sym%>
+          <li class="pure-menu-item">
+            <a href="/users/<%=key_name%>"class="pure-menu-link"><%= key_name %></a>
+          </li>
+        <% end %>
+      <% end %>
+    </ul>
+
+
+  
+</html>
